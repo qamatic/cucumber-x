@@ -4,3 +4,4 @@ test/
 cucumber.js
 tsconfig.json
 .idea
+index.ts

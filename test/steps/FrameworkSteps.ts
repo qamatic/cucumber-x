@@ -20,3 +20,29 @@ Given('the user matches the pattern', function (b) {
     let a = { state : 'PA'}
     console.log(facade.assertJson(b, a));
 });
+
+Given('a class with args {string} and {string}', function (p1, p2) {
+    let facade = this as ITestFacade;
+    facade.container().inject("Type.SunDry", SunDry);
+    let sundry = facade.container().getBean<SunDry>("Type.SunDry", null, p1, p2);
+   assert.equal(sundry.p1, "string1");
+    assert.equal(sundry.p2, "string2");
+    facade.logger().info(`p1: ${sundry.p1} p2: ${sundry.p2}`)
+});
+
+class SunDry {
+    get p1(): string {
+        return this._p1;
+    }
+    get p2(): string {
+        return this._p2;
+    }
+    private readonly _p1: string;
+    private readonly _p2: string;
+    constructor(p1 : string, p2 : string){
+        this._p1 = p1;
+        this._p2 = p2;
+
+    }
+
+}

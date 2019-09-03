@@ -1,7 +1,9 @@
+
+
 const matchPattern = require('lodash-match-pattern');
 
 export interface ILogger {
-    log(...args: any): void;
+    warning(...args: any): void;
 
     error(...args: any): void;
 
@@ -63,6 +65,20 @@ export class Service {
     }
 }
 
+export class ConsoleLogger implements ILogger {
+    error(...args: any): void {
+        console.log('error: ', ...args);
+    }
+
+    info(...args: any): void {
+        console.log('info: ', ...args);
+    }
+
+    warning(...args: any): void {
+        console.log('warning', ...args);
+    }
+
+}
 
 export class Fixture extends Service {
 
@@ -125,7 +141,7 @@ export class Container implements IContainer {
             }
             return o;
         }
-        return this.createInstance(this.resolve(beanName), args);
+        return this.createInstance(this.resolve(beanName), ...args);
     }
 
     logger(): ILogger {
@@ -142,6 +158,7 @@ export class TestFacade implements ITestFacade {
 
     constructor(init: { attach: Function, parameters: { [key: string]: any } }) {
         this.init = init;
+        this.container().inject(CxConstants.LOGGER, new ConsoleLogger());
     }
 
     report(...args: any): void {
