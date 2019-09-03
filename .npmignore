@@ -1,1 +1,6 @@
 lib/
+build/
+test/
+cucumber.js
+tsconfig.json
+.idea
