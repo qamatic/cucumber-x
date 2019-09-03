@@ -1,0 +1,39 @@
+{
+  "name": "cucumber-x",
+  "version": "1.0.0",
+  "description": "Cucumber Extra - Simple IOC, REST Assertions goodies",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "package": "tsc",
+    "test": "mkdir -p build/test-results && cucumber-js -p default"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qamatic/cucumber-x.git"
+  },
+  "keywords": [
+    "cucumber",
+    "api-test",
+    "rest-test"
+  ],
+  "author": "Senthil Maruthaiappan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qamatic/cucumber-x/issues"
+  },
+  "homepage": "https://github.com/qamatic/cucumber-x#readme",
+  "dependencies": {
+    "lodash-match-pattern": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/node": "^12.7.3",
+    "@types/cucumber": "^4.0.7",
+    "cucumber": "^5.1.0",
+    "cucumber-pretty": "^1.5.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "chai": "^4.1.2"
+  }
+}
