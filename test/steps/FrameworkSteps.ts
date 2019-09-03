@@ -1,6 +1,6 @@
 import {Given, Then, When} from 'cucumber'
 import {assert} from 'chai';
-import {ITestFacade} from "../../index";
+import {ITestFacade, Service} from "../../index";
 
 Given(/^a variable set to (\d+)$/, function (value) {
     this.container().inject("counter", value);
@@ -27,10 +27,11 @@ Given('a class with args {string} and {string}', function (p1, p2) {
     let sundry = facade.container().getBean<SunDry>("Type.SunDry", null, p1, p2);
    assert.equal(sundry.p1, "string1");
     assert.equal(sundry.p2, "string2");
-    facade.logger().info(`p1: ${sundry.p1} p2: ${sundry.p2}`)
+    facade.logger().info(`does log at facade level`);
+    sundry.log();
 });
 
-class SunDry {
+class SunDry extends Service {
     get p1(): string {
         return this._p1;
     }
@@ -40,9 +41,13 @@ class SunDry {
     private readonly _p1: string;
     private readonly _p2: string;
     constructor(p1 : string, p2 : string){
+        super();
         this._p1 = p1;
         this._p2 = p2;
+    }
 
+    log(){
+        this.logger.info(`p1: ${this.p1} p2: ${this.p2}`)
     }
 
 }

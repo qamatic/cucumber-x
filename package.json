@@ -1,6 +1,6 @@
 {
   "name": "cucumber-x",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Cucumber Extra - Simple IOC, REST Assertions goodies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

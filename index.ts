@@ -1,3 +1,4 @@
+import {log} from "util";
 
 
 const matchPattern = require('lodash-match-pattern');
@@ -125,7 +126,7 @@ export class Container implements IContainer {
 
     private prepareBean(target: any) {
         //any use in checking property existence in JS!?
-        Reflect.set(target, "logger", this.resolve(CxConstants.LOGGER));
+        Reflect.set(target, "logger", this.logger());
         Reflect.set(target, "container", this);
     }
 
@@ -145,7 +146,7 @@ export class Container implements IContainer {
     }
 
     logger(): ILogger {
-        throw new Error('logger is unimplemented');
+        return this.resolve(CxConstants.LOGGER);
     }
 }
 
