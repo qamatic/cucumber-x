@@ -15,7 +15,7 @@ export interface IContainer {
 
     resolve(key: string): any;
 
-    getBean<T>(beanName: string, instanceName?: string | null, ...args: any[]): T;
+    getBean<T>(beanName: string, instanceName?: string | null, ...args: any): T;
 
     logger(): ILogger;
 }
@@ -129,7 +129,7 @@ export class Container implements IContainer {
         Reflect.set(target, "container", this);
     }
 
-    getBean<T>(beanName: string, instanceName?: string | null, ...args: any[]): T {
+    getBean<T>(beanName: string, instanceName?: string | null, ...args: any): T {
         if (!beanName.startsWith('Type.')) {
             throw new Error('getBean can not be used for non-type injections. tips: just prefix your bean name with "Type." in order to use this function')
         }
