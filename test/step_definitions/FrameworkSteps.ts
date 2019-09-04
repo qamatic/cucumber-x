@@ -35,7 +35,9 @@ Given('a class with args {string} and {string}', function (p1, p2) {
 Given('debug log {string}', function (log) {
     let facade = this as ITestFacade;
     facade.logger().debug(log); //mock to verify method call later..
-
+    facade.logger().error(log); //mock to verify method call later..
+    facade.logger().warning(log); //mock to verify method call later..
+    facade.logger().info(log); //mock to verify method call later..
 });
 
 

@@ -1,12 +1,12 @@
 {
   "name": "cucumber-x",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Cucumber Extra - Simple IOC, REST Assertions goodies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "package": "tsc",
-    "test": "mkdir -p build/test-results && cucumber-js -p default"
+    "test": "mkdir -p build/test-results && DEBUG_ENABLED=y cucumber-js -p default"
   },
   "repository": {
     "type": "git",

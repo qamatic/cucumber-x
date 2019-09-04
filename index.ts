@@ -76,25 +76,25 @@ export class ConsoleLogger implements ILogger {
 
     error(...args: any): void {
         if (this.errorEnabled && this.errorEnabled.match(/^y/i)) {
-            console.log('error: ', ...args);
+            console.log('\x1b[31m', 'ERROR: ', ...args, '\x1b[0m');
         }
     }
 
     info(...args: any): void {
         if (this.infoEnabled && this.infoEnabled.match(/^y/i)) {
-            console.log('info: ', ...args);
+            console.log('INFO: ', ...args, '\x1b[0m');
         }
     }
 
     warning(...args: any): void {
         if (this.warningEnabled && this.warningEnabled.match(/^y/i)) {
-            console.log('warning', ...args);
+            console.log('\x1b[33m', 'WARNING: ', ...args, '\x1b[0m');
         }
     }
 
     debug(...args: any): void {
         if (this.debugEnabled && this.debugEnabled.match(/^y/i)){
-            console.log('debug: ', ...args);
+            console.log('\x1b[34m', 'DEBUG: ', ...args, '\x1b[0m');
         }
     }
 
