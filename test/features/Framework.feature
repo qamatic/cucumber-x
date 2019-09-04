@@ -19,3 +19,6 @@ Feature: Bdd Framework Tests
         """
   Scenario: constructor args
     Given a class with args "string1" and "string2"
+
+  Scenario: log test
+    Given debug log "hi"

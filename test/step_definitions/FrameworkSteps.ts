@@ -31,6 +31,14 @@ Given('a class with args {string} and {string}', function (p1, p2) {
     sundry.log();
 });
 
+
+Given('debug log {string}', function (log) {
+    let facade = this as ITestFacade;
+    facade.logger().debug(log); //mock to verify method call later..
+
+});
+
+
 class SunDry extends Service {
     get p1(): string {
         return this._p1;

@@ -9,6 +9,8 @@ export interface ILogger {
     error(...args: any): void;
 
     info(...args: any): void;
+
+    debug(...args: any): void;
 }
 
 export interface IContainer {
@@ -67,16 +69,33 @@ export class Service {
 }
 
 export class ConsoleLogger implements ILogger {
+    private errorEnabled : string = process.env.ERROR_ENABLED || 'y';
+    private infoEnabled : string = process.env.INFO_ENABLED || 'y';
+    private warningEnabled : string = process.env.WARNING_ENABLED || 'y';
+    private debugEnabled : string = process.env.DEBUG_ENABLED || 'n';
+
     error(...args: any): void {
-        console.log('error: ', ...args);
+        if (this.errorEnabled && this.errorEnabled.match(/^y/i)) {
+            console.log('error: ', ...args);
+        }
     }
 
     info(...args: any): void {
-        console.log('info: ', ...args);
+        if (this.infoEnabled && this.infoEnabled.match(/^y/i)) {
+            console.log('info: ', ...args);
+        }
     }
 
     warning(...args: any): void {
-        console.log('warning', ...args);
+        if (this.warningEnabled && this.warningEnabled.match(/^y/i)) {
+            console.log('warning', ...args);
+        }
+    }
+
+    debug(...args: any): void {
+        if (this.debugEnabled && this.debugEnabled.match(/^y/i)){
+            console.log('debug: ', ...args);
+        }
     }
 
 }
