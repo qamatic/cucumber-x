@@ -29,7 +29,6 @@ import { cucumberx } from 'cucumber-x';
 
 
 
-#### Getting Started
 
 In order to get started by someone quickly, we have created a git template repo with an working example for you get started with it easily.
 
@@ -38,4 +37,4 @@ In order to get started by someone quickly, we have created a git template repo 
 
 
 * Template Repository : [Cucumber-node-template](https://github.com/qamatic/cucumber-node-template)
-remember to login into your repo prior to use template.
+( remember to login into your repo prior to use template. )
