@@ -23,4 +23,6 @@ import { cucumberx } from 'cucumber-x';
 
 ```
 
- 
+### Documentation
+
+![arch](https://github.com/qamatic/cucumber-x/blob/master/docs/cucumber-x.png) 
