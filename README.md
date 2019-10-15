@@ -1,5 +1,5 @@
 # cucumber-x
-Cucumber JS Extra - Simple IOC, REST Assertions etc.,
+Cucumber JS Extra - Simple IOC, Fixture Patterns, REST API Assertions etc.,
 
 ```sh
 npm install cucumber-x --save
@@ -23,6 +23,16 @@ import { cucumberx } from 'cucumber-x';
 
 ```
 
-### Documentation
+### Getting Started
 
 ![arch](https://github.com/qamatic/cucumber-x/blob/master/docs/cucumber-x.png) 
+
+
+
+#### Getting Started
+
+In order to get started by someone quickly, we have created a git template repo with an working example for you get started with it easily.
+```
+  [Cucumber-node-template](https://github.com/qamatic/cucumber-node-template)
+  and follow this instruction here  [create a repo from template](https://help.github.com/en/articles/creating-a-repository-from-a-template)
+```
