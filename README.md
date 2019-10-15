@@ -32,7 +32,8 @@ import { cucumberx } from 'cucumber-x';
 #### Getting Started
 
 In order to get started by someone quickly, we have created a git template repo with an working example for you get started with it easily.
-```
-  [Cucumber-node-template](https://github.com/qamatic/cucumber-node-template)
-  and follow this instruction here  [create a repo from template](https://help.github.com/en/articles/creating-a-repository-from-a-template)
-```
+
+* Template Repository : [Cucumber-node-template](https://github.com/qamatic/cucumber-node-template)
+
+* Instructions to read:  [create a repo from template](https://help.github.com/en/articles/creating-a-repository-from-a-template)
+
